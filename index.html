@@ -116,19 +116,10 @@
         </div>
     </div>
     
-    <!-- React Native Web App will be mounted here -->
+    <!-- Redirect to portfolio -->
     <script>
-        // Initialize EmailJS when the page loads
-        window.addEventListener('load', function() {
-            if (window.emailjs) {
-                emailjs.init('your_user_id'); // Replace with actual user ID
-            }
-        });
-        
-        // Performance monitoring
-        window.addEventListener('load', function() {
-            console.log('Page loaded in:', performance.now(), 'ms');
-        });
+        // Automatically redirect to the portfolio page
+        window.location.href = '/ray-portfolio.html';
     </script>
 </body>
 </html>
