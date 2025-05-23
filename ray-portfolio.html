@@ -13,12 +13,17 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            height: 100vh;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .hero-section {
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            position: relative;
         }
         
         /* Animated Background Blobs */
@@ -309,6 +314,115 @@
             z-index: 20;
         }
         
+        /* Projects Section */
+        .projects-section {
+            min-height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .project-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .project-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .project-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .project-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .project-item {
+            margin-bottom: 15px;
+        }
+        
+        .project-label {
+            font-weight: 700;
+            color: #667eea;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .project-text {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .tech-tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .project-carousel {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .carousel-placeholder {
+            text-align: center;
+            color: #999;
+            font-size: 1.1rem;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .main-card {
@@ -335,18 +449,33 @@
             .social-container {
                 bottom: -140px;
             }
+            
+            .project-details {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .projects-container {
+                padding: 0 20px;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Background Blobs -->
-    <div class="bg-blob"></div>
-    <div class="bg-blob"></div>
-    <div class="bg-blob"></div>
-    <div class="bg-blob"></div>
-    
-    <!-- Main Card -->
-    <div class="main-card">
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <!-- Background Blobs -->
+        <div class="bg-blob"></div>
+        <div class="bg-blob"></div>
+        <div class="bg-blob"></div>
+        <div class="bg-blob"></div>
+        
+        <!-- Main Card -->
+        <div class="main-card">
         <!-- Left Section -->
         <div class="left-section">
             <div class="name-left">Ray</div>
@@ -397,14 +526,68 @@
             </a>
         </div>
     </div>
+
+    <!-- Projects Section -->
+    <div id="projects" class="projects-section">
+        <div class="projects-container">
+            <h2 class="section-title">Top Projects</h2>
+            <p class="section-subtitle">Showcasing my work solving real-world problems with AI</p>
+            
+            <!-- MARS Project -->
+            <div class="project-card">
+                <h3 class="project-title">MARS – Medication Automation Reminder System</h3>
+                <div class="project-details">
+                    <div class="project-info">
+                        <div class="project-item">
+                            <div class="project-label">Problem:</div>
+                            <div class="project-text">Managing medications is complex for seniors, caregivers, and even pets.</div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-label">Solution:</div>
+                            <div class="project-text">MARS offers voice-input scheduling, multi-profile support, and smart reminders.</div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-label">Impact:</div>
+                            <div class="project-text">Reduced missed doses by 50% in pilot tests.</div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-label">Tech Stack:</div>
+                            <div class="tech-stack">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Voice Commands</span>
+                                <span class="tech-tag">Twilio</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-carousel">
+                        <div class="carousel-placeholder">
+                            📸 MARS App Screenshots Carousel<br>
+                            <small>Screenshots will be displayed here</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script>
         // Smooth scrolling for navigation
         document.querySelectorAll('.nav-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                // For now, just show an alert - you can add scroll behavior later
-                alert('Navigate to ' + btn.textContent + ' section');
+                const targetId = btn.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
     </script>
