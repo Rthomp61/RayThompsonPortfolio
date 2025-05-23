@@ -3,6 +3,7 @@ import {
   ScrollView,
   StyleSheet,
   Platform,
+  View,
 } from 'react-native';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -50,28 +51,25 @@ const HomeScreen = () => {
         <Hero />
 
         {/* Projects Section */}
-        <div
+        <View
           ref={(ref) => (sectionRefs.current.projects = ref)}
-          style={{ minHeight: 1 }}
         >
           <Projects />
-        </div>
+        </View>
 
         {/* About Section */}
-        <div
+        <View
           ref={(ref) => (sectionRefs.current.about = ref)}
-          style={{ minHeight: 1 }}
         >
           <About />
-        </div>
+        </View>
 
         {/* Contact Section */}
-        <div
+        <View
           ref={(ref) => (sectionRefs.current.contact = ref)}
-          style={{ minHeight: 1 }}
         >
           <Contact />
-        </div>
+        </View>
 
         {/* Footer */}
         <Footer onNavigate={scrollToSection} />
