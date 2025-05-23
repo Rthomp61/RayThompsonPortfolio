@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ray Thompson - AI Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #007AFF;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: #f8f9fa;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #666;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .hero .title {
+            font-size: 1.5rem;
+            color: #007AFF;
+            margin-bottom: 10px;
+        }
+        
+        .hero .website {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+        
+        .project-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        
+        .project-img {
+            height: 250px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1rem;
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .project-detail {
+            margin-bottom: 15px;
+        }
+        
+        .project-label {
+            font-weight: bold;
+            color: #007AFF;
+            margin-bottom: 5px;
+        }
+        
+        .project-text {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .tech-tag {
+            background: #f0f8ff;
+            color: #007AFF;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            border: 1px solid #007AFF;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .skills-title {
+            font-size: 1.5rem;
+            margin: 30px 0 20px;
+            color: #333;
+        }
+        
+        .skills-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .skills-list li {
+            color: #666;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .skills-list li:before {
+            content: "✓";
+            color: #007AFF;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .call-to-action {
+            font-size: 1.3rem;
+            color: #007AFF;
+            text-align: center;
+            font-weight: 600;
+            font-style: italic;
+            margin: 30px 0;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            margin-top: 50px;
+        }
+        
+        .contact-form {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #007AFF;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: #0056CC;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .info-item {
+            margin-bottom: 20px;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .info-value {
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .footer-nav a:hover {
+            color: #007AFF;
+        }
+        
+        .copyright {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Ray Thompson</div>
+            <ul class="nav-links">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="profile-img">👤</div>
+            <h1>Ray Thompson</h1>
+            <div class="title">AI Portfolio</div>
+            <div class="website">raythompson.com</div>
+            <p>AI-native builder blending leadership experience with cutting-edge AI product development, UX/UI design, and voice-first automation.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/feed/" class="social-btn" target="_blank">
+                    🔗 LinkedIn
+                </a>
+                <a href="https://github.com/dashboard" class="social-btn" target="_blank">
+                    💻 GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Top Projects</h2>
+            <p class="section-subtitle">Showcasing my work solving real-world problems with AI</p>
+            
+            <div class="project-grid">
+                <!-- MARS Project -->
+                <div class="project-card">
+                    <div class="project-img">MARS App Screenshots Carousel</div>
+                    <div class="project-content">
+                        <h3 class="project-title">MARS – Medication Automation Reminder System</h3>
+                        
+                        <div class="project-detail">
+                            <div class="project-label">Problem:</div>
+                            <div class="project-text">Managing medications is complex for seniors, caregivers, and even pets.</div>
+                        </div>
+                        
+                        <div class="project-detail">
+                            <div class="project-label">Solution:</div>
+                            <div class="project-text">MARS offers voice-input scheduling, multi-profile support, and smart reminders.</div>
+                        </div>
+                        
+                        <div class="project-detail">
+                            <div class="project-label">Impact:</div>
+                            <div class="project-text">Reduced missed doses by 50% in pilot tests.</div>
+                        </div>
+                        
+                        <div class="project-label">Tech Stack:</div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Voice Commands</span>
+                            <span class="tech-tag">Twilio</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EMS Project -->
+                <div class="project-card">
+                    <div class="project-img">EMS App Screenshots Carousel</div>
+                    <div class="project-content">
+                        <h3 class="project-title">EMS – Expense Management System</h3>
+                        
+                        <div class="project-detail">
+                            <div class="project-label">Problem:</div>
+                            <div class="project-text">Personal finance tracking is time-consuming and error-prone for busy professionals.</div>
+                        </div>
+                        
+                        <div class="project-detail">
+                            <div class="project-label">Solution:</div>
+                            <div class="project-text">EMS provides automated budget calculation with 15% bond payment processing, voice commands, and accessibility features.</div>
+                        </div>
+                        
+                        <div class="project-detail">
+                            <div class="project-label">Impact:</div>
+                            <div class="project-text">Streamlined expense tracking with intuitive voice-first interface and comprehensive accessibility support.</div>
+                        </div>
+                        
+                        <div class="project-label">Tech Stack:</div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Voice API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>I'm a former corporate trainer turned AI-native builder — blending a decade of leadership in sales, retail, and operations with cutting-edge skills in AI product development, UX/UI design, and voice-first automation.</p>
+                
+                <p>Currently deep into Pursuit's elite AI training program, I've built and shipped multiple real-world apps, including MARS (Medication Automation Reminder System) and EMS (Expense Management System), using tools like React Native, Firebase, vector databases, and the Expo Speech API. I specialize in designing intuitive, human-centered experiences backed by modern tech stacks.</p>
+                
+                <p>Every project I touch is built with purpose — from healthcare to personal finance — and I'm passionate about using AI to create scalable, meaningful, and inclusive solutions.</p>
+                
+                <h3 class="skills-title">What I Bring to the Table:</h3>
+                <ul class="skills-list">
+                    <li>AI-native mindset with rapid MVP execution</li>
+                    <li>Voice-enabled UX & automation workflows</li>
+                    <li>Product thinking + user empathy from day one</li>
+                    <li>Real-world experience leading, coaching, and delivering</li>
+                </ul>
+                
+                <p>I'm actively looking to join a forward-thinking team or AI-driven company where I can contribute, grow, and scale impactful products.</p>
+                
+                <div class="call-to-action">Let's build the future — together.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Have a project in mind? Let's discuss how I can help.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Name *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Message *" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="info-item">
+                        <div class="info-label">Email</div>
+                        <div class="info-value">Ray.thompson@pursuit.org</div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-label">Location</div>
+                        <div class="info-value">Asbury Park, New Jersey</div>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">Social Profiles</h3>
+                    <div style="margin-top: 15px;">
+                        <a href="https://x.com/AInativebuilder" target="_blank" style="color: #007AFF; text-decoration: none; display: block; margin-bottom: 10px;">🐦 Twitter/X</a>
+                        <a href="https://www.linkedin.com/in/ray-thompson-305373356/" target="_blank" style="color: #007AFF; text-decoration: none; display: block; margin-bottom: 10px;">🔗 LinkedIn</a>
+                        <a href="https://github.com/dashboard" target="_blank" style="color: #007AFF; text-decoration: none; display: block;">💻 GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-nav">
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="copyright">
+                © 2025 Ray Thompson. All rights reserved.<br>
+                <small>Est. 2025</small>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact form submission
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+        });
+    </script>
+</body>
+</html>
