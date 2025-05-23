@@ -609,6 +609,120 @@
         .about-cta strong {
             color: #4A90E2;
         }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #4338CA 0%, #7C3AED 50%, #EC4899 100%);
+            padding: 80px 0;
+            margin-top: 40px;
+        }
+        
+        .contact-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .contact-form-wrapper, .contact-info-wrapper {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-form-title, .contact-info-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        .form-group input::placeholder, .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #4A90E2;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #4A90E2, #667eea);
+            border: none;
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.4);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-item {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-label {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #4A90E2;
+            margin-bottom: 8px;
+        }
+        
+        .contact-value {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
         
         /* Responsive */
         @media (max-width: 768px) {
@@ -882,6 +996,47 @@
                         <p class="about-closing">I'm actively looking to join a forward-thinking team or AI-driven company where I can contribute, grow, and scale impactful products.</p>
                         
                         <p class="about-cta"><strong>Let's build the future — together.</strong></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Get In Touch Section -->
+            <div class="contact-section" id="contact">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="contact-subtitle">Have a project in mind? Let's discuss how I can help.</p>
+                
+                <div class="contact-container">
+                    <div class="contact-form-wrapper">
+                        <h3 class="contact-form-title">Send a Message</h3>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info-wrapper">
+                        <h3 class="contact-info-title">Contact Information</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-label">Email</div>
+                                <div class="contact-value">Ray.thompson@pursuit.org</div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-label">Location</div>
+                                <div class="contact-value">Asbury Park, New Jersey</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
