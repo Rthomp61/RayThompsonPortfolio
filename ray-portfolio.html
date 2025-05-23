@@ -819,15 +819,26 @@
 
         // MARS Carousel functionality
         let currentSlideIndex = 0;
-        const slides = document.querySelectorAll('#marsCarousel .carousel-slide');
-        const dots = document.querySelectorAll('#marsCarousel').parentElement.querySelectorAll('.carousel-dot');
-        const totalSlides = slides.length;
+        let slides, dots, totalSlides;
         
         // EMS Carousel functionality
         let currentEMSSlideIndex = 0;
-        const emsSlides = document.querySelectorAll('#emsCarousel .carousel-slide');
-        const emsDots = document.querySelectorAll('#emsCarousel').parentElement.querySelectorAll('.carousel-dot');
-        const totalEMSSlides = emsSlides.length;
+        let emsSlides, emsDots, totalEMSSlides;
+        
+        // Initialize carousel elements after DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            slides = document.querySelectorAll('#marsCarousel .carousel-slide');
+            dots = document.querySelectorAll('#marsCarousel ~ .carousel-dots .carousel-dot');
+            totalSlides = slides.length;
+            
+            emsSlides = document.querySelectorAll('#emsCarousel .carousel-slide');
+            emsDots = document.querySelectorAll('#emsCarousel ~ .carousel-dots .carousel-dot');
+            totalEMSSlides = emsSlides.length;
+            
+            // Initialize both carousels
+            if (totalSlides > 0) showSlide(currentSlideIndex);
+            if (totalEMSSlides > 0) showEMSSlide(currentEMSSlideIndex);
+        });
 
         function showSlide(index) {
             if (index >= totalSlides) currentSlideIndex = 0;
@@ -879,18 +890,7 @@
             showEMSSlide(currentEMSSlideIndex);
         }
 
-        // Auto-advance carousels every 5 seconds
-        setInterval(() => {
-            currentSlideIndex++;
-            showSlide(currentSlideIndex);
-            
-            currentEMSSlideIndex++;
-            showEMSSlide(currentEMSSlideIndex);
-        }, 5000);
 
-        // Initialize carousels
-        showSlide(currentSlideIndex);
-        showEMSSlide(currentEMSSlideIndex);
     </script>
 </body>
 </html>
