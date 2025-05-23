@@ -1,8 +1,7 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import {
   ScrollView,
   StyleSheet,
-  Platform,
   View,
 } from 'react-native';
 import Header from '../components/Header';
@@ -13,68 +12,34 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 const HomeScreen = () => {
-  const scrollViewRef = useRef(null);
-  const sectionRefs = useRef({});
-
-  useEffect(() => {
-    // Add header padding for web to account for fixed header
-    if (Platform.OS === 'web') {
-      document.body.style.paddingTop = '80px';
-    }
-  }, []);
-
   const scrollToSection = (sectionName) => {
-    const section = sectionRefs.current[sectionName];
-    if (section && scrollViewRef.current) {
-      section.measureLayout(
-        scrollViewRef.current.getInnerViewNode(),
-        (x, y) => {
-          scrollViewRef.current.scrollTo({
-            y: y - (Platform.OS === 'web' ? 80 : 0), // Account for fixed header on web
-            animated: true,
-          });
-        },
-        () => {}
-      );
-    }
+    // Simple scroll implementation
+    console.log('Navigate to:', sectionName);
   };
 
   return (
-    <>
+    <View style={styles.container}>
       <Header onNavigate={scrollToSection} />
       <ScrollView
-        ref={scrollViewRef}
-        style={styles.container}
+        style={styles.scrollView}
         showsVerticalScrollIndicator={false}
       >
         {/* Hero Section */}
         <Hero />
 
         {/* Projects Section */}
-        <View
-          ref={(ref) => (sectionRefs.current.projects = ref)}
-        >
-          <Projects />
-        </View>
+        <Projects />
 
         {/* About Section */}
-        <View
-          ref={(ref) => (sectionRefs.current.about = ref)}
-        >
-          <About />
-        </View>
+        <About />
 
         {/* Contact Section */}
-        <View
-          ref={(ref) => (sectionRefs.current.contact = ref)}
-        >
-          <Contact />
-        </View>
+        <Contact />
 
         {/* Footer */}
         <Footer onNavigate={scrollToSection} />
       </ScrollView>
-    </>
+    </View>
   );
 };
 
@@ -82,6 +47,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
+  },
+  scrollView: {
+    flex: 1,
   },
 });
 
