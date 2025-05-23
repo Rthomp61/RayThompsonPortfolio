@@ -518,6 +518,98 @@
             padding-top: 30px;
         }
         
+        /* About Me Section */
+        .about-section {
+            background: linear-gradient(135deg, #4338CA 0%, #7C3AED 50%, #EC4899 100%);
+            padding: 80px 0;
+            margin-top: 40px;
+        }
+        
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .about-content {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .about-intro {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .about-skills {
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .skills-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #4A90E2;
+            margin-bottom: 15px;
+        }
+        
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .skills-list li {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .skills-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4A90E2;
+            font-weight: bold;
+        }
+        
+        .about-closing {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .about-cta {
+            font-size: 1.2rem;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 25px;
+        }
+        
+        .about-cta strong {
+            color: #4A90E2;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .main-card {
@@ -762,6 +854,34 @@
                                 <div class="carousel-dot" onclick="currentEMSSlide(7)"></div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- About Me Section -->
+            <div class="about-section">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-container">
+                    <div class="about-content">
+                        <p class="about-intro">I'm a former corporate trainer turned AI-native builder — blending a decade of leadership in sales, retail, and operations with cutting-edge skills in AI product development, UX/UI design, and voice-first automation.</p>
+                        
+                        <p class="about-text">Currently deep into Pursuit's elite AI training program, I've built and shipped multiple real-world apps, including MARS (Medication Automation Reminder System) and EMS (Expense Management System), using tools like React Native, Firebase, vector databases, and the Expo Speech API. I specialize in designing intuitive, human-centered experiences backed by modern tech stacks.</p>
+                        
+                        <p class="about-text">Every project I touch is built with purpose — from healthcare to personal finance — and I'm passionate about using AI to create scalable, meaningful, and inclusive solutions.</p>
+                        
+                        <div class="about-skills">
+                            <h3 class="skills-title">What I Bring to the Table:</h3>
+                            <ul class="skills-list">
+                                <li>AI-native mindset with rapid MVP execution</li>
+                                <li>Voice-enabled UX & automation workflows</li>
+                                <li>Product thinking + user empathy from day one</li>
+                                <li>Real-world experience leading, coaching, and delivering</li>
+                            </ul>
+                        </div>
+                        
+                        <p class="about-closing">I'm actively looking to join a forward-thinking team or AI-driven company where I can contribute, grow, and scale impactful products.</p>
+                        
+                        <p class="about-cta"><strong>Let's build the future — together.</strong></p>
                     </div>
                 </div>
             </div>
