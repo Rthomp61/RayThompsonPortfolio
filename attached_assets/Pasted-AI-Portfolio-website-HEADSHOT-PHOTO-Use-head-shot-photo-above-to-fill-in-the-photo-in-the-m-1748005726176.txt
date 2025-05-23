@@ -1,0 +1,227 @@
+AI Portfolio (website)   HEADSHOT PHOTO:
+￼
+
+
+Use head shot photo above to fill in the photo in the middle of the main page and replace the photo with the guy with sunglasses. Adjust the photo to fit in the main page photo sizing.  Replace Moses with Ray and also replace Ander with Thompson  replace weekly tech reviews with AI Portfolio  Headshot photo(middle) also replace mosesreviews.com with raythompson.com
+
+Below AI Portfolio  Linked IN logo with direct connection to ray Thompson linked page: https://www.linkedin.com/feed/
+
+Below raythompson.com GitHub logo with direct connection to my Github page: https://github.com/dashboard
+
+
+Main page:
+￼
+
+
+
+
+Top Projects:
+Showcasing my work solving real-world problems with AI  I would like you to add these 2 projects below to the website 
+MAKE ALL PHOTO BELOW FIT IN THEIR RESPECTIVE SECTIONS ON A SMALLER SCALE TO FIT IN THE CAROUSELS.  MARS APP:  Photos to be on a carousel for potential employers to look at.  Description of the app
+ /projects/mars/index.md # MARS – Medication Automation Reminder System
+**Problem:** Managing medications is complex for seniors, caregivers,
+and even pets.
+**Solution:** MARS offers voice-input scheduling, multi-profile
+support, and smart reminders.
+**Impact:** Reduced missed doses by 50% in pilot tests.
+> Stack: React Native, Firebase, Voice Commands, Twilio
+![screenshot](../../assets/project1-thumbnail.png) Use screen shots below 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Photo #3
+
+￼
+
+
+
+
+ photo #2
+￼
+             photo #1 of carousel 
+￼
+         photo #4 photo for  carousel
+￼
+       photo #5 
+￼
+    
+Photo #6
+
+￼
+
+
+
+Photo #7
+
+
+￼
+
+
+
+
+
+
+
+
+
+
+EMS APP: Markdown edit  Key Sections:
+* Problem/Solution/Impact summary (like your MARS example)
+* Complete feature overview with emojis for visual appeal
+* Technical architecture breakdown
+* API documentation
+* Data models and schemas
+* Development setup instructions
+* Usage examples
+* Design philosophy
+* Future enhancement roadmap
+Highlights:
+* Emphasizes the core value: automated budget calculation with 15% bond payment processing
+* Documents all the accessibility features (font sizes, dark/light mode)
+* Explains the voice command functionality
+* Shows the clean technical stack: React + TypeScript + Express
+* Includes practical usage examples
+   Add photos in a carousel just like the MARS APP description:       Photo #1 
+￼
+    
+Photo # 2
+
+
+
+
+
+
+￼
+
+
+
+
+
+Photo # 3
+
+   
+￼
+  
+
+Photo #4   
+￼
+ 
+
+
+Photo #5      
+￼
+  
+
+
+Photo #6
+
+
+
+
+
+￼
+
+
+
+
+Photo #7
+
+
+
+
+￼
+
+
+
+Photo #7 
+
+
+
+
+￼
+
+
+
+
+
+
+
+
+
+ABOUT ME SECTION:  About Me 
+I’m a former corporate trainer turned AI-native builder — blending a decade of leadership in sales, retail, and operations with cutting-edge skills in AI product development, UX/UI design, and voice-first automation.
+
+Currently deep into Pursuit’s elite AI training program, I’ve built and shipped multiple real-world apps, including MARS (Medication Automation Reminder System) and EMS (Expense Management System), using tools like React Native, Firebase, vector databases, and the Expo Speech API. I specialize in designing intuitive, human-centered experiences backed by modern tech stacks.
+
+Every project I touch is built with purpose — from healthcare to personal finance — and I’m passionate about using AI to create scalable, meaningful, and inclusive solutions.
+
+What I Bring to the Table:
+* AI-native mindset with rapid MVP execution
+* Voice-enabled UX & automation workflows
+* Product thinking + user empathy from day one
+* Real-world experience leading, coaching, and delivering
+* 
+I’m actively looking to join a forward-thinking team or AI-driven company where I can contribute, grow, and scale impactful products.
+
+Let’s build the future — together.
+ 
+
+
+
+
+
+Get In Touch
+Have a project in mind? Let's discuss how I can help.
+Send a Message
+Name
+Email
+Subject
+Message
+Send Message
+Contact Information
+
+Email
+Ray.thompson@pursuit.org
+
+Location
+Asbury Park, New Jersey
+
+Social Profiles  X logo: https://x.com/AInativebuilder Linked IN logo :   https://www.linkedin.com/in/ray-thompson-305373356/ Github Logo:   https://github.com/dashboard
+
+
+
+
+Available For
+
+AI Integration Projects
+
+Product Design Consulting
+
+Technical Advisory Roles
+
+Speaking Engagements
+Ray Thompson
+Est. 2025
+  These buttons should direct to the  correct section (centered)   Projects           About        Contact
+
+
+© 2025 Ray Thompson. All rights reserved.
+             
