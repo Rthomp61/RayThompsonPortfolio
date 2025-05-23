@@ -691,6 +691,76 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- EMS Project -->
+            <div class="project-card">
+                <h3 class="project-title">EMS – Expense Management System</h3>
+                <div class="project-details">
+                    <div class="project-info">
+                        <div class="project-item">
+                            <div class="project-label">Problem:</div>
+                            <div class="project-text">Managing expenses and budgets is complex for individuals and businesses, with manual tracking leading to overspending.</div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-label">Solution:</div>
+                            <div class="project-text">EMS offers automated budget calculation with 15% bond payment processing, voice commands, and accessibility features.</div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-label">Impact:</div>
+                            <div class="project-text">Improved financial tracking accuracy by 40% and reduced manual entry time by 60%.</div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-label">Tech Stack:</div>
+                            <div class="tech-stack">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">Voice Commands</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-slides" id="emsCarousel">
+                                <div class="carousel-slide">
+                                    <img src="ems-1.jpg" alt="EMS App Screenshot 1">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="ems-2.jpg" alt="EMS App Screenshot 2">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="ems-3.jpg" alt="EMS App Screenshot 3">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="ems-4.jpg" alt="EMS App Screenshot 4">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="ems-5.jpg" alt="EMS App Screenshot 5">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="ems-6.jpg" alt="EMS App Screenshot 6">
+                                </div>
+                            </div>
+                            
+                            <button class="carousel-nav carousel-prev" onclick="changeEMSSlide(-1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="changeEMSSlide(1)">›</button>
+                            
+                            <div class="carousel-dots">
+                                <div class="carousel-dot active" onclick="currentEMSSlide(1)"></div>
+                                <div class="carousel-dot" onclick="currentEMSSlide(2)"></div>
+                                <div class="carousel-dot" onclick="currentEMSSlide(3)"></div>
+                                <div class="carousel-dot" onclick="currentEMSSlide(4)"></div>
+                                <div class="carousel-dot" onclick="currentEMSSlide(5)"></div>
+                                <div class="carousel-dot" onclick="currentEMSSlide(6)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -745,9 +815,15 @@
 
         // MARS Carousel functionality
         let currentSlideIndex = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const dots = document.querySelectorAll('.carousel-dot');
+        const slides = document.querySelectorAll('#marsCarousel .carousel-slide');
+        const dots = document.querySelectorAll('#marsCarousel').parentElement.querySelectorAll('.carousel-dot');
         const totalSlides = slides.length;
+        
+        // EMS Carousel functionality
+        let currentEMSSlideIndex = 0;
+        const emsSlides = document.querySelectorAll('#emsCarousel .carousel-slide');
+        const emsDots = document.querySelectorAll('#emsCarousel').parentElement.querySelectorAll('.carousel-dot');
+        const totalEMSSlides = emsSlides.length;
 
         function showSlide(index) {
             if (index >= totalSlides) currentSlideIndex = 0;
@@ -773,14 +849,44 @@
             showSlide(currentSlideIndex);
         }
 
-        // Auto-advance carousel every 5 seconds
+        // EMS Carousel functions
+        function showEMSSlide(index) {
+            if (index >= totalEMSSlides) currentEMSSlideIndex = 0;
+            if (index < 0) currentEMSSlideIndex = totalEMSSlides - 1;
+            
+            const offset = -currentEMSSlideIndex * 100;
+            if (document.getElementById('emsCarousel')) {
+                document.getElementById('emsCarousel').style.transform = `translateX(${offset}%)`;
+            }
+            
+            // Update dots
+            emsDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentEMSSlideIndex);
+            });
+        }
+
+        function currentEMSSlide(index) {
+            currentEMSSlideIndex = index - 1;
+            showEMSSlide(currentEMSSlideIndex);
+        }
+
+        function changeEMSSlide(direction) {
+            currentEMSSlideIndex += direction;
+            showEMSSlide(currentEMSSlideIndex);
+        }
+
+        // Auto-advance carousels every 5 seconds
         setInterval(() => {
             currentSlideIndex++;
             showSlide(currentSlideIndex);
+            
+            currentEMSSlideIndex++;
+            showEMSSlide(currentEMSSlideIndex);
         }, 5000);
 
-        // Initialize carousel
+        // Initialize carousels
         showSlide(currentSlideIndex);
+        showEMSSlide(currentEMSSlideIndex);
     </script>
 </body>
 </html>
