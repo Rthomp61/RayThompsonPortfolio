@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ray Thompson - AI Portfolio</title>
+    <meta name="description" content="Ray Thompson - AI-native builder specializing in AI product development, UX/UI design, and voice-first automation. Showcasing MARS and EMS projects.">
+    <meta name="keywords" content="AI, React Native, Product Development, UX/UI Design, Voice Automation, MARS, EMS">
+    <meta name="author" content="Ray Thompson">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ray Thompson - AI Portfolio">
+    <meta property="og:description" content="AI-native builder specializing in AI product development, UX/UI design, and voice-first automation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://raythompson.com">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ray Thompson - AI Portfolio">
+    <meta name="twitter:description" content="AI-native builder specializing in AI product development, UX/UI design, and voice-first automation.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        #root {
+            min-height: 100vh;
+            width: 100%;
+        }
+        
+        /* Custom CSS Variables */
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #666;
+            --background-color: #ffffff;
+            --light-gray: #f8f9fa;
+            --dark-gray: #333;
+            --border-color: #e0e0e0;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Loading styles */
+        .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: var(--light-gray);
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--border-color);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0056CC;
+        }
+        
+        /* Focus styles for accessibility */
+        *:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+        
+        /* Button hover effects */
+        button:hover {
+            transform: translateY(-1px);
+            transition: transform 0.2s ease;
+        }
+        
+        /* Responsive utilities */
+        @media (max-width: 768px) {
+            .desktop-only {
+                display: none !important;
+            }
+            
+            /* Mobile-specific adjustments */
+            body {
+                font-size: 16px;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .mobile-only {
+                display: none !important;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .no-print {
+                display: none !important;
+            }
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            :root {
+                --primary-color: #0000FF;
+                --secondary-color: #000000;
+                --border-color: #000000;
+            }
+        }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+    
+    <!-- React Native Web App will be mounted here -->
+    <script>
+        // Initialize EmailJS when the page loads
+        window.addEventListener('load', function() {
+            if (window.emailjs) {
+                // Replace with your actual EmailJS user ID
+                emailjs.init(process.env.EMAILJS_USER_ID || 'your_user_id');
+            }
+        });
+        
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            console.log('Ray Thompson Portfolio loaded successfully');
+            console.log('Load time:', performance.now(), 'ms');
+        });
+        
+        // Service Worker registration for PWA capabilities
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+        
+        // Error handling
+        window.addEventListener('error', function(event) {
+            console.error('Global error:', event.error);
+        });
+        
+        // Unhandled promise rejection handling
+        window.addEventListener('unhandledrejection', function(event) {
+            console.error('Unhandled promise rejection:', event.reason);
+        });
+    </script>
+</body>
+</html>

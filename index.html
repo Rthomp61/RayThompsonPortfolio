@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ray Thompson - AI Portfolio</title>
+    <meta name="description" content="Ray Thompson - AI-native builder specializing in AI product development, UX/UI design, and voice-first automation. Showcasing MARS and EMS projects.">
+    <meta name="keywords" content="AI, React Native, Product Development, UX/UI Design, Voice Automation, MARS, EMS">
+    <meta name="author" content="Ray Thompson">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ray Thompson - AI Portfolio">
+    <meta property="og:description" content="AI-native builder specializing in AI product development, UX/UI design, and voice-first automation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://raythompson.com">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ray Thompson - AI Portfolio">
+    <meta name="twitter:description" content="AI-native builder specializing in AI product development, UX/UI design, and voice-first automation.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        #root {
+            min-height: 100vh;
+            width: 100%;
+        }
+        
+        /* Loading styles */
+        .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #e0e0e0;
+            border-top: 4px solid #007AFF;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #007AFF;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0056CC;
+        }
+        
+        /* Responsive utilities */
+        @media (max-width: 768px) {
+            .desktop-only {
+                display: none !important;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .mobile-only {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+    
+    <!-- React Native Web App will be mounted here -->
+    <script>
+        // Initialize EmailJS when the page loads
+        window.addEventListener('load', function() {
+            if (window.emailjs) {
+                emailjs.init('your_user_id'); // Replace with actual user ID
+            }
+        });
+        
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            console.log('Page loaded in:', performance.now(), 'ms');
+        });
+    </script>
+</body>
+</html>
