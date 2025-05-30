@@ -1308,6 +1308,10 @@
         let currentEMSSlideIndex = 0;
         let emsSlides, emsDots, totalEMSSlides;
         
+        // ENOTECA Carousel functionality
+        let currentEnotecaSlideIndex = 0;
+        let enotecaSlides, enotecaDots, totalEnotecaSlides;
+        
         // Initialize carousel elements after DOM loads
         document.addEventListener('DOMContentLoaded', function() {
             slides = document.querySelectorAll('#marsCarousel .carousel-slide');
@@ -1318,9 +1322,14 @@
             emsDots = document.querySelectorAll('#emsCarousel ~ .carousel-dots .carousel-dot');
             totalEMSSlides = emsSlides.length;
             
-            // Initialize both carousels
+            enotecaSlides = document.querySelectorAll('#enotecaCarousel .carousel-slide');
+            enotecaDots = document.querySelectorAll('#enotecaCarousel ~ .carousel-dots .carousel-dot');
+            totalEnotecaSlides = enotecaSlides.length;
+            
+            // Initialize all carousels
             if (totalSlides > 0) showSlide(currentSlideIndex);
             if (totalEMSSlides > 0) showEMSSlide(currentEMSSlideIndex);
+            if (totalEnotecaSlides > 0) showEnotecaSlide(currentEnotecaSlideIndex);
         });
 
         function showSlide(index) {
