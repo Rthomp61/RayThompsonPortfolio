@@ -1,0 +1,131 @@
+# ENOTECA
+*Professional Wine Inventory Management System*
+
+## Overview
+
+ENOTECA is a comprehensive wine inventory management web application designed for restaurants, wine enthusiasts, and hospitality professionals. The platform combines advanced technological features with an elegant, interactive user interface to streamline wine tracking and management operations.
+
+## Key Features
+
+### 🎤 Voice Command Integration
+- **Voice Add Wine**: Instantly add wines to your inventory using natural voice commands
+- **Voice Sell Wine**: Reduce inventory quantities through voice-activated sales processing
+- Intelligent voice parsing that understands wine types, quantities, and vintage years
+- Fuzzy matching technology handles pronunciation variations and spelling differences
+
+### 📱 Responsive Design
+- Optimized for desktop, tablet, and mobile devices
+- Glass morphism design elements for modern aesthetics
+- Dark and light theme support with seamless switching
+- Customizable text sizing for accessibility
+
+### 🍷 Wine Management
+- Comprehensive wine catalog with detailed information
+- Support for multiple bottle sizes (Piccolo, Standard, Magnum, etc.)
+- Track single bottles, US cases (12 bottles), and EU cases (6 bottles)
+- Advanced filtering by wine type, country, and vintage year
+- Real-time inventory tracking and updates
+
+### 📊 Inventory Control
+- Visual wine cards displaying complete wine information
+- Quantity breakdown showing singles and cases
+- Quick delete functionality with confirmation prompts
+- Recent wines display for easy access to latest additions
+
+### 🔍 Smart Search & Filtering
+- Intelligent search functionality across wine database
+- Filter wines by type (Cabernet Sauvignon, Pinot Noir, Chardonnay, etc.)
+- Country and region-based filtering
+- Vintage year filtering for precise inventory management
+
+### 📄 Document Processing
+- OCR (Optical Character Recognition) for wine invoice processing
+- Automatic extraction of wine data from uploaded documents
+- Bulk wine entry from supplier invoices and delivery receipts
+
+## Technical Specifications
+
+### Frontend Technologies
+- **React** with TypeScript for type-safe development
+- **Tailwind CSS** for responsive styling and design system
+- **Wouter** for client-side routing
+- **TanStack Query** for efficient data fetching and caching
+- **React Hook Form** with Zod validation for form management
+
+### Backend Technologies
+- **Express.js** server with TypeScript
+- **PostgreSQL** database for reliable data persistence
+- **Drizzle ORM** for type-safe database operations
+- **WebSocket** support for real-time updates
+
+### Key Integrations
+- Voice recognition using Web Speech API
+- File upload and processing with Multer
+- Session management for user preferences
+- Real-time inventory synchronization
+
+## Wine Categories Supported
+
+### Red Wines
+- Cabernet Sauvignon
+- Pinot Noir
+- Merlot
+- Syrah/Shiraz
+- Malbec
+- Tempranillo
+
+### White Wines
+- Chardonnay
+- Sauvignon Blanc
+- Pinot Grigio/Pinot Gris
+- Riesling
+
+### Specialty Wines
+- Champagne & Sparkling
+- Rosé wines
+- Dessert wines
+- Fortified wines
+
+## Regional Coverage
+
+### Major Wine Regions
+- **USA**: California (Napa Valley, Sonoma), Oregon, Washington
+- **France**: Bordeaux, Burgundy, Champagne, Rhône Valley
+- **Italy**: Tuscany, Piedmont, Veneto, Sicily
+- **Spain**: Rioja, Ribera del Duero, Priorat
+- **Argentina**: Mendoza, Salta, Patagonia
+- **Chile**: Central Valley, Casablanca Valley
+- **Australia**: Barossa Valley, Hunter Valley
+- **Germany**: Mosel, Rheingau, Pfalz
+
+## User Experience Features
+
+### Accessibility
+- Multiple text size options (Small, Medium, Large, X-Large)
+- High contrast theme options
+- Keyboard navigation support
+- Screen reader compatibility
+
+### Performance
+- Optimized loading with lazy loading
+- Efficient caching strategies
+- Progressive web app capabilities
+- Offline functionality for core features
+
+### Security
+- Secure session management
+- Data validation and sanitization
+- Protected API endpoints
+- Regular security updates
+
+## Installation & Setup
+
+ENOTECA is designed to run on modern web browsers and requires no additional software installation for end users. The application automatically adapts to your device and preferences, providing a seamless experience across all platforms.
+
+## Support
+
+For technical support, feature requests, or general inquiries about ENOTECA, please contact your system administrator or refer to the user documentation provided with your installation.
+
+---
+
+*ENOTECA - Elevating Wine Management Through Technology*

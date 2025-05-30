@@ -1093,6 +1093,80 @@
                 </div>
             </div>
             
+            <!-- ENOTECA Project -->
+            <div class="project-card">
+                <h2 class="project-title">ENOTECA</h2>
+                <p class="project-subtitle">Professional Wine Inventory Management System</p>
+                
+                <div class="project-details">
+                    <div class="project-info">
+                        <div class="project-item">
+                            <div class="project-label">Problem:</div>
+                            <div class="project-text">Wine inventory management for restaurants and hospitality professionals was complex, time-consuming, and prone to errors with manual tracking systems.</div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-label">Solution:</div>
+                            <div class="project-text">ENOTECA provides voice-activated wine inventory management with OCR document processing, comprehensive wine catalog, and real-time tracking across multiple bottle sizes.</div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-label">Impact:</div>
+                            <div class="project-text">Streamlined wine operations for hospitality professionals with voice commands, automated invoice processing, and comprehensive inventory control.</div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-label">Tech Stack:</div>
+                            <div class="tech-stack">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Voice API</span>
+                                <span class="tech-tag">OCR</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-slides" id="enotecaCarousel">
+                                <div class="carousel-slide">
+                                    <img src="attached_assets/Image 5-29-25 at 7.53 PM.jpeg" alt="ENOTECA App Screenshot 1">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="attached_assets/Image 5-29-25 at 7.54 PM.jpeg" alt="ENOTECA App Screenshot 2">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="attached_assets/Image 5-29-25 at 7.53 PM.jpeg" alt="ENOTECA App Screenshot 3">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="attached_assets/Image 5-29-25 at 7.54 PM.jpeg" alt="ENOTECA App Screenshot 4">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="attached_assets/Image 5-29-25 at 7.55 PM.jpeg" alt="ENOTECA App Screenshot 5">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="attached_assets/Image 5-29-25 at 7.55 PM.jpeg" alt="ENOTECA App Screenshot 6">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="attached_assets/Image 5-29-25 at 8.05 PM.jpeg" alt="ENOTECA App Screenshot 7">
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-dots" id="enotecaDots">
+                                <span class="carousel-dot active" onclick="showSlide('enoteca', 0)"></span>
+                                <span class="carousel-dot" onclick="showSlide('enoteca', 1)"></span>
+                                <span class="carousel-dot" onclick="showSlide('enoteca', 2)"></span>
+                                <span class="carousel-dot" onclick="showSlide('enoteca', 3)"></span>
+                                <span class="carousel-dot" onclick="showSlide('enoteca', 4)"></span>
+                                <span class="carousel-dot" onclick="showSlide('enoteca', 5)"></span>
+                                <span class="carousel-dot" onclick="showSlide('enoteca', 6)"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <!-- About Me Section -->
             <div id="about" class="about-section">
                 <h2 class="section-title">About Me</h2>
@@ -1296,6 +1370,48 @@
             showEMSSlide(currentEMSSlideIndex);
         }
 
+        // ENOTECA Carousel functionality
+        let currentEnotecaSlideIndex = 0;
+
+        function showEnotecaSlide(index) {
+            const slides = document.querySelectorAll('#enotecaCarousel .carousel-slide');
+            const dots = document.querySelectorAll('#enotecaDots .carousel-dot');
+            
+            if (index >= slides.length) currentEnotecaSlideIndex = 0;
+            if (index < 0) currentEnotecaSlideIndex = slides.length - 1;
+            
+            slides.forEach((slide, i) => {
+                slide.style.display = i === currentEnotecaSlideIndex ? 'block' : 'none';
+            });
+            
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentEnotecaSlideIndex);
+            });
+        }
+
+        function currentEnotecaSlide(index) {
+            currentEnotecaSlideIndex = index - 1;
+            showEnotecaSlide(currentEnotecaSlideIndex);
+        }
+
+        function changeEnotecaSlide(direction) {
+            currentEnotecaSlideIndex += direction;
+            showEnotecaSlide(currentEnotecaSlideIndex);
+        }
+
+        // Update showSlide function to handle ENOTECA
+        function showSlide(project, index) {
+            if (project === 'mars') {
+                currentMarsSlideIndex = index;
+                showMarsSlide(currentMarsSlideIndex);
+            } else if (project === 'ems') {
+                currentEMSSlideIndex = index;
+                showEMSSlide(currentEMSSlideIndex);
+            } else if (project === 'enoteca') {
+                currentEnotecaSlideIndex = index;
+                showEnotecaSlide(currentEnotecaSlideIndex);
+            }
+        }
 
     </script>
 </body>
