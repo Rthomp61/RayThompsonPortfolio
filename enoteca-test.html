@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .project-title {
+            color: #4A90E2;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .project-details {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+        .project-info {
+            flex: 1;
+        }
+        .project-item {
+            margin-bottom: 20px;
+        }
+        .project-label {
+            color: #4A90E2;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .project-text {
+            color: #E0E0E0;
+            line-height: 1.6;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tech-tag {
+            background: rgba(74, 144, 226, 0.2);
+            color: #4A90E2;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+        }
+        .project-carousel {
+            flex: 1;
+            max-width: 300px;
+        }
+        .carousel-container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ENOTECA Project -->
+    <div class="project-card">
+        <h3 class="project-title">ENOTECA – Professional Wine Inventory Management System</h3>
+        <div class="project-details">
+            <div class="project-info">
+                <div class="project-item">
+                    <div class="project-label">Problem:</div>
+                    <div class="project-text">Wine inventory management for restaurants and hospitality professionals lacked voice integration and automated document processing capabilities.</div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-label">Solution:</div>
+                    <div class="project-text">ENOTECA provides voice-activated wine management with OCR invoice processing, comprehensive catalog tracking, and real-time inventory updates.</div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-label">Impact:</div>
+                    <div class="project-text">Streamlined wine operations with voice commands, automated document processing, and comprehensive inventory control for hospitality professionals.</div>
+                </div>
+                
+                <div class="project-item">
+                    <div class="project-label">Tech Stack:</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Voice API</span>
+                        <span class="tech-tag">OCR</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-slides" id="enotecaCarousel">
+                        <div class="carousel-slide">
+                            <img src="enoteca-1.jpg" alt="ENOTECA App Screenshot 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="enoteca-2.jpg" alt="ENOTECA App Screenshot 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="enoteca-3.jpg" alt="ENOTECA App Screenshot 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
