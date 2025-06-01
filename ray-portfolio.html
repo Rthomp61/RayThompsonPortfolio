@@ -1324,7 +1324,7 @@
         // Initialize carousel elements after DOM loads
         document.addEventListener('DOMContentLoaded', function() {
             slides = document.querySelectorAll('#marsCarousel .carousel-slide');
-            dots = document.querySelectorAll('#marsCarousel ~ .carousel-dots .carousel-dot');
+            dots = document.querySelector('#marsCarousel').parentElement.querySelectorAll('.carousel-dots .carousel-dot');
             totalSlides = slides.length;
             
             emsSlides = document.querySelectorAll('#emsCarousel .carousel-slide');
