@@ -1010,16 +1010,16 @@
                                 </div>
                             </div>
                             
-                            <button class="carousel-nav carousel-prev" onclick="changeSlide(-1)">‹</button>
-                            <button class="carousel-nav carousel-next" onclick="changeSlide(1)">›</button>
+                            <button class="carousel-nav carousel-prev" onclick="changeMarsSlide(-1)">‹</button>
+                            <button class="carousel-nav carousel-next" onclick="changeMarsSlide(1)">›</button>
                             
                             <div class="carousel-dots">
-                                <div class="carousel-dot active" onclick="currentSlide(1)"></div>
-                                <div class="carousel-dot" onclick="currentSlide(2)"></div>
-                                <div class="carousel-dot" onclick="currentSlide(3)"></div>
-                                <div class="carousel-dot" onclick="currentSlide(4)"></div>
-                                <div class="carousel-dot" onclick="currentSlide(5)"></div>
-                                <div class="carousel-dot" onclick="currentSlide(6)"></div>
+                                <div class="carousel-dot active" onclick="currentMarsSlide(1)"></div>
+                                <div class="carousel-dot" onclick="currentMarsSlide(2)"></div>
+                                <div class="carousel-dot" onclick="currentMarsSlide(3)"></div>
+                                <div class="carousel-dot" onclick="currentMarsSlide(4)"></div>
+                                <div class="carousel-dot" onclick="currentMarsSlide(5)"></div>
+                                <div class="carousel-dot" onclick="currentMarsSlide(6)"></div>
                             </div>
                         </div>
                     </div>
@@ -1356,12 +1356,12 @@
             });
         }
 
-        function changeSlide(direction) {
+        function changeMarsSlide(direction) {
             currentSlideIndex += direction;
             showSlide(currentSlideIndex);
         }
 
-        function currentSlide(index) {
+        function currentMarsSlide(index) {
             currentSlideIndex = index - 1;
             showSlide(currentSlideIndex);
         }
