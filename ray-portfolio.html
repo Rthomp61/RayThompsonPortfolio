@@ -1357,13 +1357,38 @@
         }
 
         function changeMarsSlide(direction) {
+            console.log('changeMarsSlide called with direction:', direction);
+            console.log('Current slide index before:', currentSlideIndex);
             currentSlideIndex += direction;
-            showSlide(currentSlideIndex);
+            
+            // Handle wrap-around
+            if (currentSlideIndex >= totalSlides) currentSlideIndex = 0;
+            if (currentSlideIndex < 0) currentSlideIndex = totalSlides - 1;
+            
+            console.log('Current slide index after:', currentSlideIndex);
+            
+            // Apply transform directly
+            const carousel = document.getElementById('marsCarousel');
+            if (carousel) {
+                const translateX = -currentSlideIndex * 100;
+                carousel.style.transform = `translateX(${translateX}%)`;
+                console.log('Applied transform:', `translateX(${translateX}%)`);
+                
+                // Update dots
+                const marsContainer = carousel.closest('.carousel-container');
+                if (marsContainer) {
+                    const marsDots = marsContainer.querySelectorAll('.carousel-dot');
+                    marsDots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === currentSlideIndex);
+                    });
+                }
+            }
         }
 
         function currentMarsSlide(index) {
+            console.log('currentMarsSlide called with index:', index);
             currentSlideIndex = index - 1;
-            showSlide(currentSlideIndex);
+            changeMarsSlide(0); // Use changeMarsSlide to apply the change
         }
 
         // EMS Carousel functions
