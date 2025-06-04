@@ -183,13 +183,23 @@
         /* Media query for smaller screens (Replit preview) */
         @media (max-width: 1400px) {
             .main-card {
-                justify-content: space-around;
-                padding: 0 20px;
+                justify-content: space-between;
+                padding: 0 30px;
             }
             
-            .left-section, .right-section {
-                flex: 0 1 auto;
-                min-width: 200px;
+            .left-section {
+                flex: 0 0 220px;
+                text-align: center;
+            }
+            
+            .right-section {
+                flex: 0 0 220px;
+                text-align: center;
+                margin-left: auto;
+            }
+            
+            .center-section {
+                margin: 0 40px;
             }
         }
         
