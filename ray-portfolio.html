@@ -183,24 +183,26 @@
         /* Media query for smaller screens (Replit preview) */
         @media (max-width: 1400px) {
             .main-card {
-                justify-content: center;
+                display: grid;
+                grid-template-columns: 1fr auto 1fr;
+                gap: 50px;
+                padding: 0 40px;
                 align-items: center;
-                gap: 40px;
-                padding: 0 20px;
             }
             
             .left-section {
-                flex: 0 0 200px;
-                text-align: center;
-            }
-            
-            .right-section {
-                flex: 0 0 200px;
+                justify-self: end;
                 text-align: center;
             }
             
             .center-section {
+                justify-self: center;
                 margin: 0;
+            }
+            
+            .right-section {
+                justify-self: start;
+                text-align: center;
             }
         }
         
