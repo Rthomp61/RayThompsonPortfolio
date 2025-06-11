@@ -221,39 +221,10 @@
         .linkedin-logo svg, .github-logo svg {
             width: 32px !important;
             height: 32px !important;
-            min-width: 32px !important;
-            min-height: 32px !important;
-            max-width: 32px !important;
-            max-height: 32px !important;
         }
         
-        /* Force icon sizing for all environments */
-        svg {
-            width: 32px !important;
-            height: 32px !important;
-        }
-        
-        .left-section svg, .right-section svg {
-            width: 32px !important;
-            height: 32px !important;
-        }
-        
-        /* Ultra-specific selectors for preview environment */
-        html body .main-card .left-section .linkedin-logo svg,
-        html body .main-card .right-section .github-logo svg {
-            width: 32px !important;
-            height: 32px !important;
-            font-size: 32px !important;
-        }
-        
-        /* Alternative sizing approach */
-        .linkedin-logo, .github-logo {
-            font-size: 32px !important;
-        }
-        
-        /* Mobile-specific styles - optimized for mobile screens */
-        @media (max-width: 768px) and (orientation: portrait), 
-               (max-width: 480px) {
+        /* Mobile-only styles */
+        @media (max-width: 480px) {
             body {
                 font-size: 16px !important;
             }
