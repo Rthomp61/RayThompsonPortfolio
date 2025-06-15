@@ -131,8 +131,14 @@
             color: rgba(255, 255, 255, 0.8);
             font-weight: 500;
             letter-spacing: 2px;
-            white-space: nowrap !important;
-            display: inline-block !important;
+        }
+        
+        /* Desktop only - force AI PORTFOLIO on one line */
+        @media (min-width: 769px) {
+            .subtitle-left {
+                white-space: nowrap !important;
+                display: inline-block !important;
+            }
         }
         
         /* Center Section - Headshot */
