@@ -7,13 +7,7 @@
 
 [[redirects]]
   from = "/*"
-  to = "/ray-portfolio.html"
-  status = 200
-  conditions = {Role = ["admin"]}
-
-[[redirects]]
-  from = "/"
-  to = "/ray-portfolio.html"
+  to = "/index.html"
   status = 200
 
 [[headers]]
