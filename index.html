@@ -969,23 +969,25 @@
         /* Responsive */
         @media (max-width: 768px) {
             .main-card {
-                width: 90vw;
+                width: 95vw;
                 height: auto;
                 min-height: 200px;
                 flex-direction: row;
-                padding: 20px;
+                padding: 15px;
                 align-items: center;
                 justify-content: space-between;
+                gap: 8px;
             }
             
             .left-section, .right-section {
-                width: 30%;
+                flex: 1;
                 height: auto;
-                padding: 5px;
+                padding: 2px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                min-width: 0;
             }
             
             .left-section {
@@ -995,24 +997,26 @@
             .center-section {
                 width: 85px;
                 height: 85px;
-                margin: 0 3px;
+                margin: 0;
                 flex-shrink: 0;
             }
             
             .name-left, .name-right {
-                font-size: 1.5rem;
+                font-size: clamp(1.2rem, 4vw, 1.5rem);
                 text-align: center;
                 line-height: 1.1;
                 white-space: nowrap;
                 overflow: visible;
+                width: 100%;
             }
             
             .subtitle-left, .subtitle-right {
-                font-size: 0.6rem;
+                font-size: clamp(0.5rem, 2vw, 0.6rem);
                 text-align: center;
                 margin-top: 3px;
                 white-space: nowrap;
                 overflow: visible;
+                width: 100%;
             }
             
             /* Contact Section Mobile Fix */
@@ -1051,6 +1055,69 @@
             
             .footer-container {
                 padding: 0 20px;
+            }
+        }
+        
+        /* Additional mobile breakpoints for better responsive design */
+        @media (max-width: 480px) {
+            .main-card {
+                width: 98vw;
+                padding: 12px;
+                gap: 6px;
+            }
+            
+            .center-section {
+                width: 75px;
+                height: 75px;
+            }
+            
+            .name-left, .name-right {
+                font-size: clamp(1rem, 3.5vw, 1.3rem);
+            }
+            
+            .subtitle-left, .subtitle-right {
+                font-size: clamp(0.45rem, 1.8vw, 0.55rem);
+            }
+        }
+        
+        @media (max-width: 390px) {
+            .main-card {
+                width: 99vw;
+                padding: 10px;
+                gap: 4px;
+            }
+            
+            .center-section {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .name-left, .name-right {
+                font-size: clamp(0.9rem, 3vw, 1.2rem);
+            }
+            
+            .subtitle-left, .subtitle-right {
+                font-size: clamp(0.4rem, 1.5vw, 0.5rem);
+            }
+        }
+        
+        @media (max-width: 320px) {
+            .main-card {
+                padding: 8px;
+                gap: 2px;
+            }
+            
+            .center-section {
+                width: 65px;
+                height: 65px;
+            }
+            
+            .name-left, .name-right {
+                font-size: clamp(0.8rem, 2.8vw, 1.1rem);
+            }
+            
+            .subtitle-left, .subtitle-right {
+                font-size: clamp(0.35rem, 1.2vw, 0.45rem);
             }
         }
     </style>
