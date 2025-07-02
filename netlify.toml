@@ -5,10 +5,18 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Handle thank-you page redirect
+[[redirects]]
+  from = "/thank-you"
+  to = "/thank-you.html"
+  status = 200
+
+# Spa fallback redirect (exclude form posts)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
 
 [[headers]]
   for = "/*"
