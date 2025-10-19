@@ -30,3 +30,6 @@ run = ["sh", "-c", "npm install && npx expo install @expo/vector-icons @react-na
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[agent]
+expertMode = true
